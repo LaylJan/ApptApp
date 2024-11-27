@@ -21,6 +21,7 @@
       </div>
     </div>
   </div>
+<docInfo src="img2.webp" />
 </template>
 <script>
 import img1 from "../assets/img1.jpg";
@@ -28,8 +29,12 @@ import img2 from "../assets/img2.webp";
 import img3 from "../assets/img3.png";
 import img4 from "../assets/img4.jpg";
 import img5 from "../assets/img5.jpg";
+import docInfo from "./docInfo.vue";
 
 export default { 
+  components: {
+    docInfo,
+  },
   data() {
     return {
       currentIndex: 0,

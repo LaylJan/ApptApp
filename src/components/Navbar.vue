@@ -17,7 +17,7 @@
   
         <!-- Schedule Appointment Button -->
         <div>
-          <button class="bg-white text-black px-4 py-2 rounded-md font-semibold hover:bg-blue-500 hover:text-white transition">
+          <button class="bg-white text-black px-4 py-2 rounded-md font-semibold hover:bg-blue-600 hover:bg-opacity-90 hover:text-white transition">
             Set an Appointment
           </button>
         </div>
