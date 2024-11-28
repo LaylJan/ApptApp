@@ -1,17 +1,17 @@
 <template>
 <div class="w-full relative h-96">
     <!-- Red Section -->
-    <div class="absolute inset-0 bg-blue-500 flex bg-opacity-40 items-center justify-center z-10">
-      <p class="text-white text-2xl font-bold">NEW ERA GENERAL HOSPITAL</p>
+    <div class="absolute inset-0 bg-yellow-400  flex bg-opacity-30 items-center justify-center z-10">
+      <img src="../assets/Welcome.png" alt="" class="h-96">
     </div>
 
     <!-- Carousel -->
     <div class="absolute inset-0 overflow-hidden">
       <div class="flex transition-transform duration-700 ease-in-out" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
         <!-- Image 1 -->
-        <img :src="images[0]" alt="Slide 1" class="w-full h-96 object-cover" />
+        <img :src="images[1]" alt="Slide 1" class="w-full h-96 object-cover" />
         <!-- Image 2 -->
-        <img :src="images[1]" alt="Slide 2" class="w-full h-96 object-cover" />
+        <img :src="images[0]" alt="Slide 2" class="w-full h-96 object-cover" />
         <!-- Image 3 -->
         <img :src="images[2]" alt="Slide 3" class="w-full h-96 object-cover" />
         <!-- Image 4 -->

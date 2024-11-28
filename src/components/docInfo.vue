@@ -1,12 +1,12 @@
 <template>
-    <section class="w-full flex justify-center items-center h-screen bg-gray-100">
-      <img
-        :src="require(`@/assets/${src}`)"
-        alt="Animated Image"
-        class="w-64 h-64 object-cover rounded-full shadow-lg animate-fade-float"
-      />
-    </section>
-  </template>
+  <section class="w-full flex justify-center items-center h-screen bg-gray-100">
+    <img
+      :src="require(`@/assets/${src}`)"
+      alt="Animated Image"
+      class="w-64 h-64 object-cover rounded-full shadow-lg animate-fade-float"
+    />
+  </section>
+</template>
   
   <script>
   export default {
