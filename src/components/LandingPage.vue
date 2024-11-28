@@ -1,7 +1,7 @@
 <template>
 <div class="w-full relative h-96">
     <!-- Red Section -->
-    <div class="absolute inset-0 bg-yellow-400  flex bg-opacity-30 items-center justify-center z-10">
+    <div class="absolute inset-0 bg-blue-500  flex bg-opacity-30 items-center justify-center z-10">
       <img src="../assets/Welcome.png" alt="" class="h-96">
     </div>
 
@@ -21,7 +21,13 @@
       </div>
     </div>
   </div>
-<docInfo src="img2.webp" />
+  <div class="flex justify-center gap-4 p-4 bg-gray-100">
+    <docInfo src="DR1.png" />
+    <docInfo src="DR2.png" />
+    <docInfo src="DR3.png" />
+    <docInfo src="DR4.png" />
+  </div>
+
 </template>
 <script>
 import img1 from "../assets/img1.jpg";

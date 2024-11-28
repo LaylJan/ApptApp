@@ -1,9 +1,9 @@
 <template>
-  <section class="w-full flex justify-center items-center h-screen bg-gray-100">
+  <section class="flex justify-center items-center mt-7 bg-gray-100">
     <img
       :src="require(`@/assets/${src}`)"
       alt="Animated Image"
-      class="w-64 h-64 object-cover rounded-full shadow-lg animate-fade-float"
+      class="w-72 h-72 object-cover rounded-2xl shadow-2xl animate-fade-float"
     />
   </section>
 </template>
