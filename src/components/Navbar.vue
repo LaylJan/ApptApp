@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import ScheduleModal from "./scheduleModal.vue";
+  import ScheduleModal from "./scheduleModal.vue";
 
 export default {
   name: "NavbarComponent",
@@ -43,9 +43,7 @@ export default {
     return {
       showScheduleModal: false,
       doctors: [
-        { id: 1, name: "Dr. John Doe" },
-        { id: 2, name: "Dr. Jane Smith" },
-        { id: 3, name: "Dr. Alice Brown" },
+
       ],
     };
   },
