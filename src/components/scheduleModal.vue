@@ -131,9 +131,17 @@ export default {
       );
       this.availableSchedules = selectedDoctor ? selectedDoctor.schedule : [];
     },
-    handleSubmit() {
-      console.log("Form Submitted:", this.form);
-      this.$emit("close");
+    async handleSubmit() {
+      try {
+        const response = await axios.post("http://localhost:5000/api/appointments", {
+          ...this.form,
+          approved: false,
+        });
+        console.log("Appointment Created:", response.data);
+        this.$emit("close");
+      } catch (error) {
+        console.error("Error creating appointment:", error);
+      }
     },
   },
   mounted() {

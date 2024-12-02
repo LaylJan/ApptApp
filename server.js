@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
-dotenv.config(); // Load environment variables from a .env file
+dotenv.config(); 
 
 const app = express();
 
@@ -24,7 +24,18 @@ const doctorSchema = new mongoose.Schema({
   schedule: { type: [String], required: true },
 });
 
-const Doctor = mongoose.model("Doctor", doctorSchema, "Doctors"); // Explicitly specify collection name
+const appointmentSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  number: { type: String, required: true },
+  doctor: { type: String, required: true },
+  schedule: { type: String, required: true },
+  approved: { type: Boolean, default: false }, // Default to false
+});
+
+// Explicitly specify collection name
+const Doctor = mongoose.model("Doctor", doctorSchema, "Doctors"); 
+const Appointment = mongoose.model("Appointment", appointmentSchema, "Appointments");
 
 // Routes
 app.get("/", (req, res) => {
@@ -48,6 +59,26 @@ app.post("/api/doctors", async (req, res) => {
     const newDoctor = new Doctor({ name, schedule });
     await newDoctor.save();
     res.status(201).json(newDoctor);
+  } catch (err) {
+    res.status(400).json({ message: "Bad Request", error: err.message });
+  }
+});
+
+app.get("/api/appointments", async (req, res) => {
+  try {
+    const appointments = await Appointment.find();
+    res.json(appointments);
+  } catch (err) {
+    res.status(500).json({ message: "Server error", error: err.message });
+  }
+});
+
+app.post("/api/appointments", async (req, res) => {
+  try {
+    const { name, email, number, doctor, schedule } = req.body;
+    const newAppointment = new Appointment({ name, email, number, doctor, schedule });
+    await newAppointment.save();
+    res.status(201).json(newAppointment);
   } catch (err) {
     res.status(400).json({ message: "Bad Request", error: err.message });
   }
