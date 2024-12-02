@@ -84,6 +84,19 @@ app.post("/api/appointments", async (req, res) => {
   }
 });
 
+app.put('/api/appointments/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { approved } = req.body;
+
+    await Appointment.findByIdAndUpdate(id, { approved });
+    res.status(200).send({ message: 'Approval status updated' });
+  } catch (error) {
+    res.status(500).send({ error: 'Failed to update approval status' });
+  }
+});
+
+
 // Server Listening
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
