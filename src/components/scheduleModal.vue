@@ -4,35 +4,51 @@
   >
     <div class="bg-yellow-400 bg-opacity-95 rounded-lg shadow-xl w-96 p-6">
       <div class="flex justify-between items-center border-b pb-4 mb-4">
-        <h2 class="text-xl font-semibold text-gray-800 ">Set an Appointment</h2>
+        <h2 class="text-xl font-semibold text-gray-800">Set an Appointment</h2>
         <button
           @click="$emit('close')"
-          class="text-red-500 hover:text-red-700 transition"
+          class="text-black hover:text-blue-700 transition"
         >
-          ✖
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 40 40"
+          >
+            <path
+              fill="currentColor"
+              d="M21.499 19.994L32.755 8.727a1.064 1.064 0 0 0-.001-1.502c-.398-.396-1.099-.398-1.501.002L20 18.494L8.743 7.224c-.4-.395-1.101-.393-1.499.002a1.05 1.05 0 0 0-.309.751c0 .284.11.55.309.747L18.5 19.993L7.245 31.263a1.064 1.064 0 0 0 .003 1.503c.193.191.466.301.748.301h.006c.283-.001.556-.112.745-.305L20 21.495l11.257 11.27c.199.198.465.308.747.308a1.06 1.06 0 0 0 1.061-1.061c0-.283-.11-.55-.31-.747z"
+            />
+          </svg>
         </button>
       </div>
 
       <!-- Form -->
       <form @submit.prevent="handleSubmit">
         <div class="mb-4">
-          <label for="name" class="block text-s text-gray-900 font-medium">Name</label>
+          <label for="name" class="block text-s text-gray-900 font-medium"
+            >Name</label
+          >
           <input
             id="name"
             v-model="form.name"
             type="text"
             placeholder="Enter your name"
+            autocomplete="off"
             class="w-full border text-black rounded-md px-3 py-2 mt-1 focus:ring focus:ring-blue-300"
           />
         </div>
 
         <div class="mb-4">
-          <label for="email" class="block text-s text-gray-900 font-medium">Email</label>
+          <label for="email" class="block text-s text-gray-900 font-medium"
+            >Email</label
+          >
           <input
             id="email"
             v-model="form.email"
             type="email"
             placeholder="Enter your email"
+            autocomplete="off"
             class="w-full border text-black rounded-md px-3 py-2 mt-1 focus:ring focus:ring-blue-300"
           />
         </div>
@@ -46,12 +62,15 @@
             v-model="form.number"
             type="tel"
             placeholder="Enter your number"
+            autocomplete="off"
             class="w-full border text-gray-900 text-black rounded-md px-3 py-2 mt-1 focus:ring focus:ring-blue-300"
           />
         </div>
 
         <div class="mb-4">
-          <label for="doctor" class="block text-gray-900 text-s font-medium">Select Doctor</label>
+          <label for="doctor" class="block text-gray-900 text-s font-medium"
+            >Select Doctor</label
+          >
           <select
             id="doctor"
             v-model="form.doctor"
@@ -70,7 +89,9 @@
         </div>
 
         <div class="mb-4">
-          <label for="schedule" class="block text-gray-900 text-s font-medium">Available Schedule</label>
+          <label for="schedule" class="block text-gray-900 text-s font-medium"
+            >Available Schedule</label
+          >
           <select
             id="schedule"
             v-model="form.schedule"
@@ -133,10 +154,13 @@ export default {
     },
     async handleSubmit() {
       try {
-        const response = await axios.post("http://localhost:5000/api/appointments", {
-          ...this.form,
-          approved: false,
-        });
+        const response = await axios.post(
+          "http://localhost:5000/api/appointments",
+          {
+            ...this.form,
+            approved: false,
+          }
+        );
         console.log("Appointment Created:", response.data);
         this.$emit("close");
       } catch (error) {
