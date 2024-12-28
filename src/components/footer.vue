@@ -26,7 +26,7 @@
         class="border-t border-white border-opacity-30 pt-4 flex justify-between items-center"
       >
         <!-- Copyright -->
-        <p class="text-sm">© 2024 Your New Era General Hospital. All rights reserved.</p>
+        <p class="text-sm">© 2024 Your Harmony General Hospital. All rights reserved.</p>
 
         <!-- Social Media Icons -->
         <div class="flex space-x-4">
