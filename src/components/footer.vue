@@ -5,7 +5,7 @@
       <div class="flex flex-wrap justify-between items-center mb-4">
         <!-- Logo and Description -->
         <div class="flex items-center space-x-3">
-          <img src="@/assets/logo.png" alt="Logo" class="w-12 h-12" />
+          <img src="@/assets/logo.png" alt="Logo" class="w-16" />
           <p class="text-sm">
             Your trusted partner in healthcare. Delivering excellence every day.
           </p>

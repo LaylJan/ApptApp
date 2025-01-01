@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
-        <img src="../assets/logo.png" alt="Logo" class="w-24 h-24" />
+        <img src="../assets/logo.png" alt="Logo" class="w-28 h-auto" />
       </div>
 
       <!-- Navigation Links -->
